@@ -1,0 +1,47 @@
+[
+  {
+    "matricula": "1234-MMM",
+    "marca": "Tesla",
+    "modelo": "Model 3",
+    "anyo_matriculacion": 2022,
+    "numero_plazas": 5,
+    "autonomia_km": 480,
+    "color": "Blanco",
+    "imagen": "tesla3.png",
+    "estado": "disponible",
+    "id_concesionario": 1,
+    "precio_hora": 18,
+    "puntuacion": 4.8,
+    "activo": 1
+  },
+  {
+    "matricula": "5678-ZZZ",
+    "marca": "Renault",
+    "modelo": "Zoe",
+    "anyo_matriculacion": 2021,
+    "numero_plazas": 5,
+    "autonomia_km": 300,
+    "color": "Azul",
+    "imagen": "renault_zoe.png",
+    "estado": "disponible",
+    "id_concesionario": 2,
+    "precio_hora": 12,
+    "puntuacion": 4.2,
+    "activo": 1
+  },
+  {
+    "matricula": "9012-CCC",
+    "marca": "Nissan",
+    "modelo": "Leaf",
+    "anyo_matriculacion": 2020,
+    "numero_plazas": 5,
+    "autonomia_km": 350,
+    "color": "Gris",
+    "imagen": "nissan_leaf.png",
+    "estado": "disponible",
+    "id_concesionario": 3,
+    "precio_hora": 10,
+    "puntuacion": 4.0,
+    "activo": 1
+  }
+]

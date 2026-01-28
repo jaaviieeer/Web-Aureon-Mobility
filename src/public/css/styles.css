@@ -1,0 +1,392 @@
+/*  ESTILIZACIÓN GENERAL */
+* {
+  --color-enterprise: #000000;
+  --general-color: rgba(22, 22, 23, 0.1);
+  --background-general: #f4f0fa;
+  --hover-items: #48e;
+}
+
+body {
+  background-color: var(--background-general);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  position: fixed;
+  background-color: var(--general-color);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.navbar .container-fluid {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-enlace {
+  color: #000000 !important;
+  color: var(--color-enterprise);
+  font-weight: bold;
+  margin: 0 6px;
+  /*Para que no se vea como un enlace */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-enlace:hover {
+  color: var(--hover-items) !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-mobile-center {
+    justify-content: center !important;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.logo-aureon {
+  width: 90px;
+  /* Con esto queda bastante finito. Como que parte del tamaño de la nav venía del padding y margin del logo */
+  padding: 0;
+  margin: 0;
+}
+
+.bi-moon-stars-fill,
+.bi-translate,
+.bi-gear-fill {
+  color: var(--color-enterprise);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bi-moon-stars-fill:hover,
+.bi-translate:hover,
+.bi-gear-fill:hover {
+  color: var(--hover-items);
+  cursor: pointer;
+}
+
+/* Menu hamburguesa */
+
+/* OTROS ESTILOS */
+.titulo-app {
+  margin-top: 4rem;
+  padding: 0.5rem;
+  font-size: 1.5rem; /*16px * 3*/
+  margin-bottom: 0rem !important;
+}
+
+/* ESTILIZACIÓN DE LA RESERVA Y SUS ITEMS */
+.main-reserva {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coche-reserva {
+  border-radius: 10px;
+  display: block;
+}
+
+/* Responsive: en móvil el coche va arriba y el formulario abajo */
+@media (max-width: 768px) {
+  .main-reserva {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+  .coche-reserva {
+    margin: 0 auto 10px auto;
+    max-width: 50vw;
+    display: block;
+  }
+  form {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+form {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+fieldset {
+  padding: 0;
+}
+
+legend {
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--color-enterprise);
+  /* Porque no se por qué si no pongo esto los bordes de la tarjeta de las esquinas se quitan */
+  overflow: hidden;
+}
+
+.card .col-md-4,
+.card .col-md-8 {
+  padding: 0; /* ← ELIMINAR padding que puede crear espacios */
+}
+
+.form-control,
+.form-select {
+  padding: 0.1rem;
+}
+
+.titulo-formulario {
+  text-align: center;
+}
+.label-obligatorio::after {
+  content: " *";
+  color: #f00;
+}
+
+.error-mensaje {
+  color: #f00;
+}
+
+.campo-error {
+  border: 2px solid #f00;
+}
+
+.campo-valido {
+  border: 2px solid #0f0;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: none;
+}
+
+.form-control.campo-error:focus,
+.form-select.campo-error:focus {
+  box-shadow: 0 0 0 0.1rem rgba(255, 0, 0, 0.25);
+  border: 2px solid #f00;
+}
+
+.form-select.campo-error:focus {
+  box-shadow: 0 0 0 0.1rem rgba(255, 0, 0, 0.25);
+  border: 2px solid #f00;
+}
+
+.password-toggle {
+  cursor: pointer;
+  color: var(--color-enterprise);
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--hover-items);
+}
+
+.btn-aureon {
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+}
+
+/* ESTILIZANDO BARRA DE PROGRESO */
+.progress-container {
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  /* Separa la barra del resto del contenido del formulario */
+  margin: 0.2rem 0;
+  padding: 0 0.875rem;
+}
+
+.progress-bar-custom {
+  /* Para que los hijos (contenedores o elementos hijos) se coloquen dentro de la barra SII su position es absolute */
+  position: relative;
+  width: 100%;
+  /* Altura de nuestra barra */
+  height: 30px;
+  border: 3px solid var(--color-enterprise);
+  border-radius: 25px;
+  /* NO quiero que se me salga el logo de la barra, si se sale algo ==> esconde */
+  overflow: hidden;
+  background: var(--background-general);
+}
+
+.progress-fill {
+  /* Quiero que se quede dentro de la barra con position relative */
+  position: absolute;
+  /* Comienza en la esquina superior izquierda */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #000000;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 25px;
+  /* Coloca esta capa por encima del fondo pero debajo del texto. */
+  z-index: 2;
+}
+
+.progress-text {
+  /* Quiero que se quede dentro de la barra con position relative */
+  position: absolute;
+  /* Centramos el texto en medio de la barra */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 0.9rem;
+  /* Lo coloca encima de todas las capas */
+  z-index: 10;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Para que el progreso se siga viendo */
+.progress-fill.high-progress + .progress-text {
+  color: #fff;
+}
+
+.input-dni-reserva {
+  text-transform: uppercase;
+}
+
+/* ESTILIZANDO FOOTER Y SUS COMPONENTES */
+footer {
+  background: var(--general-color);
+  /* Estas medidas tendrán que pasar a ser relativas en algún momento. */
+  margin: 0;
+  margin-top: auto;
+  padding: 50px;
+}
+
+footer > p {
+  display: inline;
+}
+
+/* ESTILIZANDO LOS BOTONES DE LA PÁGINA */
+
+/*FORMULARIO DE RESERVA*/
+
+/*TABLA DE VEHÍCULOS*/
+.table-responsive {
+  padding: 0 3rem;
+}
+
+.buscador-vehiculos {
+  margin: 1rem 3rem;
+  width: auto;
+  min-width: 600px;
+}
+
+.table {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.table-responsive .table th:first-child,
+.table-responsive .table td:first-child {
+  text-align: left !important;
+}
+
+.table-responsive .table th:not(:first-child),
+.table-responsive .table td:not(:first-child) {
+  text-align: right !important;
+}
+
+/* CARRUSEL */
+#carrusel {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.c-item {
+  height: 100%;
+}
+
+.c-img {
+  object-fit: cover;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.texto-carrusel{
+  position: absolute;
+  /* Centramos el texto */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.texto-carrusel > h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.texto-carrusel > h1 > span {
+  color: var(--color-enterprise);
+}
+
+.texto-carrusel > h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* ==========================================
+   CONTENEDOR DEL MAPA - TAMAÑO FIJO ABSOLUTO
+   ========================================== */
+
+#mapa-concesionarios,
+.leaflet-container {
+  height: 500px !important;
+  width: 100% !important;
+}
+
+.mapa-lista-concesionarios{
+  height: 500px;
+  max-height: 500px;
+  min-height: 500px;
+  overflow: scroll;
+}

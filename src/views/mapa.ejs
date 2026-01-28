@@ -1,0 +1,78 @@
+<section class="mapa-section py-3" id="seccion-mapa">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bold text-dark">
+                    Encuentra tu concesionario más cercano
+                </h2>
+                <p class="lead text-dark-50">
+                    Te mostramos todos nuestros concesionarios y calculamos la distancia desde tu ubicación
+                </p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-light shadow-sm" id="alert-ubicacion" role="alert">
+                    <span id="texto-ubicacion">Obteniendo tu ubicación...</span>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-0">
+                        <div id="mapa-loading" class="text-center p-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden"> Cargando mapa</span>
+                            </div>
+                            <p class="mt-3 text-muted fw-bold">Cargando mapa </p>
+                        </div>
+                        <div id="mapa-concesionarios" class="d-none"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mapa-lista-concesionarios">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-dark">
+                        <h5>Concesionarios ordenados por cercanía</h5>
+                    </div>
+                    <div class="card-body p-0 card-lista-concesionarios">
+                        <div id="lista-concesionarios">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">
+                                    Cargando concesionarios...
+                                </span>
+                            </div>
+                            <p class="mt-2 text-muted">Cargando concesionarios</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card border-0 bg-light">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <i class="bi bi-geo-alt-fill text-primary"></i>
+                            <p class="mb-0 mt-2 fw-bold">Tu ubicación</p>
+                            <small class="text-muted">Marcador azul en el mapa</small>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <i class="bi bi-geo-alt-fill text-danger"></i>
+                            <p class="mb-0 mt-2 fw-bold">Concesionarios</p>
+                            <small class="text-muted">Haz click para más información!!!</small>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi bi-rulers text-success"></i>
+                            <p class="mb-0 mt-2 fw-bold">Distancia Calculada</p>
+                            <small class="text-muted">Ordenados de más cercano a más lejano</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

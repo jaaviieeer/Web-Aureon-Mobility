@@ -1,0 +1,78 @@
+<div class="card-body">
+
+    <h4 class="text-muted p-2">
+        Estadísticas Generales
+    </h4>
+    <div class="row g-3">
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-muted mb-3">Kilómetros Totales Recorridos</h5>
+                    <h2 class="text-primary mb-2">
+                        <%= estadisticasGenerales.kilometros_totales %> km
+                    </h2>
+                    <p class="text-muted mb-0">
+                        <small>Desde el inicio de operaciones</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-muted mb-3">Reservas por Franja Horaria</h5>
+
+                    <div class="mb-2 text-start">
+                        <p class="mb-1">
+                            Mañana (6-12h):
+                            <span class="badge bg-warning text-dark">
+                                <%= estadisticasGenerales.reservas_manana %>
+                            </span>
+                        </p>
+                        <p class="mb-1">
+                             Tarde (12-18h):
+                            <span class="badge bg-warning text-dark">
+                                <%= estadisticasGenerales.reservas_tarde %>
+                            </span>
+                        </p>
+                        <p class="mb-0">
+                            Noche (18-24h):
+                            <span class="badge bg-warning text-dark">
+                                <%= estadisticasGenerales.reservas_noche %>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm border-danger">
+                <div class="card-body text-center d-flex flex-column justify-content-center">
+                    <h5 class="card-title text-muted mb-3">Incidencias Reportadas</h5>
+                    <h2 class="text-danger mb-2">
+                        <%= estadisticasGenerales.incidencias_totales %>
+                    </h2>
+
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <p class="mb-1">
+                                <span class="badge bg-success">
+                                    <%= estadisticasGenerales.incidencias_resueltas %>
+                                </span>
+                            </p>
+                            <small class="text-muted">Resueltas</small>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1">
+                                <span class="badge bg-danger">
+                                    <%= estadisticasGenerales.incidencias_pendientes %>
+                                </span>
+                            </p>
+                            <small class="text-muted">Pendientes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

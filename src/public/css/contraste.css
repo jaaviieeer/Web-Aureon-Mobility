@@ -1,0 +1,395 @@
+/* ===================================
+   ALTO CONTRASTE - MODO CLARO
+   =================================== */
+
+body.alto-contraste:not(.modo-oscuro) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Variables para modo claro con alto contraste */
+body.alto-contraste:not(.modo-oscuro) {
+  --color-enterprise: #000000;
+  --general-color: rgba(0, 0, 0, 0.2);
+  --background-general: #ffffff;
+  --hover-items: #0000ff;
+}
+
+/* Navegación */
+body.alto-contraste:not(.modo-oscuro) nav {
+  background-color: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .navbar-enlace {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .navbar-enlace:hover {
+  color: #0000ff !important;
+  text-decoration: underline;
+}
+
+body.alto-contraste:not(.modo-oscuro) .bi-moon-stars-fill,
+body.alto-contraste:not(.modo-oscuro) .bi-translate,
+body.alto-contraste:not(.modo-oscuro) .bi-gear-fill {
+  color: #000000;
+}
+
+/* Tarjetas */
+body.alto-contraste:not(.modo-oscuro) .card {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .card-header,
+body.alto-contraste:not(.modo-oscuro) .card-footer {
+  background-color: #f0f0f0 !important;
+  border-color: #000000 !important;
+}
+
+/* Formularios */
+body.alto-contraste:not(.modo-oscuro) .form-control,
+body.alto-contraste:not(.modo-oscuro) .form-select,
+body.alto-contraste:not(.modo-oscuro) textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .form-control:focus,
+body.alto-contraste:not(.modo-oscuro) .form-select:focus {
+  border: 3px solid #0000ff !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 255, 0.25) !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) form {
+  background-color: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+/* Botones */
+body.alto-contraste:not(.modo-oscuro) .btn-primary {
+  background-color: #0000ff !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-primary:hover {
+  background-color: #0000cc !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-secondary {
+  background-color: #808080 !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-outline-primary {
+  background-color: #ffffff !important;
+  color: #0000ff !important;
+  border: 3px solid #0000ff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-outline-primary:hover {
+  background-color: #0000ff !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-aureon {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-danger {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .btn-success {
+  background-color: #008000 !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+/* Enlaces */
+body.alto-contraste:not(.modo-oscuro) a {
+  color: #0000ff !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) a:hover {
+  color: #000080 !important;
+}
+
+/* Tablas */
+body.alto-contraste:not(.modo-oscuro) .table {
+  border: 3px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .table thead th {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste:not(.modo-oscuro) .table tbody tr {
+  border: 2px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .table tbody tr:hover {
+  background-color: #e0e0e0 !important;
+}
+
+/* Modales */
+body.alto-contraste:not(.modo-oscuro) .modal-content {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .modal-header {
+  background-color: #f0f0f0 !important;
+  border-bottom: 3px solid #000000 !important;
+}
+
+/* Barra de progreso */
+body.alto-contraste:not(.modo-oscuro) .progress-bar-custom {
+  border: 3px solid #000000 !important;
+  background: #ffffff !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .progress-fill {
+  background: #000000 !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .progress-text {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+body.alto-contraste:not(.modo-oscuro) .progress-fill.high-progress + .progress-text {
+  color: #ffffff !important;
+}
+
+/* Footer */
+body.alto-contraste:not(.modo-oscuro) footer {
+  background: #f0f0f0 !important;
+  border-top: 3px solid #000000 !important;
+}
+
+/* ===================================
+   ALTO CONTRASTE - MODO OSCURO
+   =================================== */
+
+body.alto-contraste.modo-oscuro {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Variables para modo oscuro con alto contraste */
+body.alto-contraste.modo-oscuro {
+  --color-enterprise: #ffffff;
+  --general-color: rgba(255, 255, 255, 0.2);
+  --background-general: #000000;
+  --hover-items: #ffff00;
+}
+
+/* Navegación */
+body.alto-contraste.modo-oscuro nav {
+  background-color: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .navbar-enlace {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .navbar-enlace:hover {
+  color: #ffff00 !important;
+  text-decoration: underline;
+}
+
+body.alto-contraste.modo-oscuro .bi-moon-stars-fill,
+body.alto-contraste.modo-oscuro .bi-translate,
+body.alto-contraste.modo-oscuro .bi-gear-fill {
+  color: #ffffff;
+}
+
+/* Tarjetas */
+body.alto-contraste.modo-oscuro .card {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .card-header,
+body.alto-contraste.modo-oscuro .card-footer {
+  background-color: #1a1a1a !important;
+  border-color: #ffffff !important;
+}
+
+/* Formularios */
+body.alto-contraste.modo-oscuro .form-control,
+body.alto-contraste.modo-oscuro .form-select,
+body.alto-contraste.modo-oscuro textarea {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .form-control:focus,
+body.alto-contraste.modo-oscuro .form-select:focus {
+  border: 3px solid #ffff00 !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 0, 0.25) !important;
+}
+
+body.alto-contraste.modo-oscuro form {
+  background-color: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+/* Botones */
+body.alto-contraste.modo-oscuro .btn-primary {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  border: 3px solid #ffffff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .btn-primary:hover {
+  background-color: #ffff80 !important;
+}
+
+body.alto-contraste.modo-oscuro .btn-secondary {
+  background-color: #808080 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .btn-outline-primary {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 3px solid #ffff00 !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .btn-outline-primary:hover {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+body.alto-contraste.modo-oscuro .btn-aureon {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #ffffff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .btn-danger {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .btn-success {
+  background-color: #00ff00 !important;
+  color: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+/* Enlaces */
+body.alto-contraste.modo-oscuro a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro a:hover {
+  color: #ffff80 !important;
+}
+
+/* Tablas */
+body.alto-contraste.modo-oscuro .table {
+  border: 3px solid #ffffff !important;
+  background-color: #000000 !important;
+}
+
+body.alto-contraste.modo-oscuro .table thead th {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  font-weight: bold;
+}
+
+body.alto-contraste.modo-oscuro .table tbody tr {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .table tbody tr:hover {
+  background-color: #1a1a1a !important;
+}
+
+/* Modales */
+body.alto-contraste.modo-oscuro .modal-content {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .modal-header {
+  background-color: #1a1a1a !important;
+  border-bottom: 3px solid #ffffff !important;
+}
+
+/* Barra de progreso */
+body.alto-contraste.modo-oscuro .progress-bar-custom {
+  border: 3px solid #ffffff !important;
+  background: #000000 !important;
+}
+
+body.alto-contraste.modo-oscuro .progress-fill {
+  background: #ffffff !important;
+}
+
+body.alto-contraste.modo-oscuro .progress-text {
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+body.alto-contraste.modo-oscuro .progress-fill.high-progress + .progress-text {
+  color: #000000 !important;
+}
+
+/* Footer */
+body.alto-contraste.modo-oscuro footer {
+  background: #1a1a1a !important;
+  border-top: 3px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* ===================================
+   ALERTAS (AMBOS MODOS)
+   =================================== */
+
+body.alto-contraste .alert {
+  border: 3px solid #000000 !important;
+  font-weight: bold !important;
+}
+
+body.alto-contraste.modo-oscuro .alert {
+  border: 3px solid #ffffff !important;
+}

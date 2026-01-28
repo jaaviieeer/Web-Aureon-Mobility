@@ -1,0 +1,596 @@
+/* ===================================
+   MODO OSCURO - Aureon Mobility
+   =================================== */
+
+body.modo-oscuro {
+  /* Variables personalizadas para modo oscuro */
+  --color-enterprise: #ffffff;
+  --general-color: rgba(255, 255, 255, 0.1);
+  --background-general: #1a1a1a;
+  --hover-items: #6ea8fe;
+  
+  background-color: var(--background-general);
+  color: #e0e0e0;
+}
+
+/* ===================================
+   NAVEGACIÓN
+   =================================== */
+
+body.modo-oscuro nav {
+  background-color: rgba(30, 30, 30, 0.95);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+body.modo-oscuro .navbar-enlace {
+  color: #e0e0e0 !important;
+}
+
+body.modo-oscuro .navbar-enlace:hover {
+  color: var(--hover-items) !important;
+}
+
+body.modo-oscuro .bi-gear-fill {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .bi-gear-fill:hover {
+  color: var(--hover-items);
+}
+
+body.modo-oscuro .navbar-toggler {
+  border-color: #fff;
+  color: #fff !important;
+}
+
+body.modo-oscuro .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* ===================================
+   TÍTULOS Y TEXTOS
+   =================================== */
+
+body.modo-oscuro .titulo-app,
+body.modo-oscuro h1,
+body.modo-oscuro h2,
+body.modo-oscuro h3,
+body.modo-oscuro h4,
+body.modo-oscuro h5,
+body.modo-oscuro h6 {
+  color: #ffffff;
+}
+
+body.modo-oscuro label,
+body.modo-oscuro span {
+  color: #fff;
+}
+
+body.modo-oscuro p{
+  color: #000000;
+}
+
+body.modo-oscuro .text-muted {
+  color: #b0b0b0 !important;
+}
+
+body.modo-oscuro a {
+  color: #fff;
+}
+
+body.modo-oscuro a:hover {
+  color: #9ec5fe;
+}
+
+/* ===================================
+   TARJETAS (CARDS)
+   =================================== */
+
+body.modo-oscuro .card {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .card-header {
+  background-color: #252525;
+  border-bottom-color: #404040;
+  color: #ffffff;
+}
+
+body.modo-oscuro .card-body {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .card-footer {
+  background-color: #252525;
+  border-top-color: #404040;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .card-title {
+  color: #ffffff;
+}
+
+body.modo-oscuro .card-text {
+  color: #e0e0e0;
+}
+
+/* ===================================
+   FORMULARIOS
+   =================================== */
+
+body.modo-oscuro form {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro fieldset {
+  border-color: #404040;
+}
+
+body.modo-oscuro legend {
+  color: #ffffff;
+}
+
+body.modo-oscuro .form-control,
+body.modo-oscuro .form-select,
+body.modo-oscuro textarea {
+  background-color: #1a1a1a;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .form-control:focus,
+body.modo-oscuro .form-select:focus,
+body.modo-oscuro textarea:focus {
+  background-color: #1a1a1a;
+  border-color: #6ea8fe;
+  color: #e0e0e0;
+  box-shadow: 0 0 0 0.25rem rgba(110, 168, 254, 0.25);
+}
+
+body.modo-oscuro .form-control::placeholder {
+  color: #808080;
+}
+
+body.modo-oscuro .form-label {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .form-check-label {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .form-text {
+  color: #b0b0b0;
+}
+
+/* Input con errores */
+body.modo-oscuro .campo-error {
+  border-color: #dc3545;
+  background-color: #1a1a1a;
+}
+
+body.modo-oscuro .form-control.campo-error:focus,
+body.modo-oscuro .form-select.campo-error:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+  border-color: #dc3545;
+}
+
+body.modo-oscuro .campo-valido {
+  border-color: #198754;
+  background-color: #1a1a1a;
+}
+
+body.modo-oscuro .error-mensaje {
+  color: #ea868f;
+}
+
+/* ===================================
+   BARRA DE PROGRESO
+   =================================== */
+
+body.modo-oscuro .progress-bar-custom {
+  background: #48e;
+  border-color: #48e;
+}
+
+body.modo-oscuro .progress-fill {
+  background: #ffffff;
+}
+
+body.modo-oscuro .progress-text {
+  color: #000000;
+}
+
+body.modo-oscuro .progress-fill.high-progress + .progress-text {
+  color: #000000;
+}
+
+/* ===================================
+   BOTONES
+   =================================== */
+
+body.modo-oscuro .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #ffffff;
+}
+
+body.modo-oscuro .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+body.modo-oscuro .btn-secondary {
+  background-color: #495057;
+  border-color: #495057;
+  color: #ffffff;
+}
+
+body.modo-oscuro .btn-secondary:hover {
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+
+body.modo-oscuro .btn-outline-primary {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+body.modo-oscuro .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #ffffff;
+}
+
+body.modo-oscuro .btn-outline-secondary {
+  color: #ced4da;
+  border-color: #6c757d;
+}
+
+body.modo-oscuro .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #ffffff;
+}
+
+body.modo-oscuro .btn-aureon {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.modo-oscuro .btn-aureon:hover {
+  background-color: #e0e0e0;
+}
+
+body.modo-oscuro .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+body.modo-oscuro .btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+/* ===================================
+   TABLAS
+   =================================== */
+
+body.modo-oscuro .table {
+  color: #e0e0e0;
+  border-color: #404040;
+  background-color: #2d2d2d;
+}
+
+body.modo-oscuro .table thead th {
+  background-color: #252525;
+  border-bottom-color: #404040;
+  color: #ffffff;
+}
+
+body.modo-oscuro .table tbody tr {
+  border-bottom-color: #404040;
+}
+
+body.modo-oscuro .table tbody tr:hover {
+  background-color: #3a3a3a;
+}
+
+body.modo-oscuro .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+body.modo-oscuro .table-striped tbody tr:nth-of-type(even) {
+  background-color: #252525;
+  color: #fff;
+
+}
+
+body.modo-oscuro .table-bordered {
+  border-color: #404040;
+}
+
+body.modo-oscuro .table-bordered th,
+body.modo-oscuro .table-bordered td {
+  border-color: #404040;
+}
+
+/* Buscador de vehículos */
+body.modo-oscuro .buscador-vehiculos {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+
+body.modo-oscuro .buscador-vehiculos input {
+  background-color: #1a1a1a;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+/* ===================================
+   MODALES
+   =================================== */
+
+body.modo-oscuro .modal-content {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .modal-header {
+  background-color: #252525;
+  border-bottom-color: #404040;
+}
+
+body.modo-oscuro .modal-footer {
+  background-color: #252525;
+  border-top-color: #404040;
+}
+
+body.modo-oscuro .modal-title {
+  color: #ffffff;
+}
+
+body.modo-oscuro #nombreVehiculo {
+  color: #000000;
+}
+
+body.modo-oscuro .btn-close {
+  filter: invert(1);
+}
+
+/* ===================================
+   ALERTAS
+   =================================== */
+
+body.modo-oscuro .alert-success {
+  background-color: #1a4d2e;
+  border-color: #2d6a4f;
+  color: #a8dabc;
+}
+
+body.modo-oscuro .alert-danger {
+  background-color: #4d1a1a;
+  border-color: #6a2d2d;
+  color: #f1aeb5;
+}
+
+body.modo-oscuro .alert-warning {
+  background-color: #4d3d1a;
+  border-color: #6a5d2d;
+  color: #ffe69c;
+}
+
+body.modo-oscuro .alert-info {
+  background-color: #1a3d4d;
+  border-color: #2d5d6a;
+  color: #9eeaf9;
+}
+
+body.modo-oscuro .alert .btn-close {
+  filter: invert(1);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+body.modo-oscuro footer {
+  background: rgba(30, 30, 30, 0.95) !important;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro footer p {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro footer a {
+  color: #6ea8fe;
+}
+
+body.modo-oscuro footer a:hover {
+  color: #9ec5fe;
+}
+
+/* ===================================
+   CARRUSEL
+   =================================== */
+
+body.modo-oscuro #carousel {
+  background: rgba(10, 10, 10, 0.9);
+}
+
+body.modo-oscuro .carousel-caption-custom > h1,
+body.modo-oscuro .carousel-caption-custom > h2 {
+  color: #ffffff;
+}
+
+body.modo-oscuro .carousel-caption-custom > h1 > span {
+  color: #6ea8fe;
+}
+
+body.modo-oscuro .carousel-control-prev,
+body.modo-oscuro .carousel-control-next {
+  filter: invert(1);
+}
+
+/* ===================================
+   LISTAS
+   =================================== */
+
+body.modo-oscuro .list-group-item {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .list-group-item:hover {
+  background-color: #3a3a3a;
+}
+
+body.modo-oscuro .list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* ===================================
+   DROPDOWNS
+   =================================== */
+
+body.modo-oscuro .dropdown-menu {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+
+body.modo-oscuro .dropdown-item {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .dropdown-item:hover,
+body.modo-oscuro .dropdown-item:focus {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.modo-oscuro .dropdown-divider {
+  border-top-color: #404040;
+}
+
+/* ===================================
+   BREADCRUMBS Y NAVEGACIÓN
+   =================================== */
+
+body.modo-oscuro .breadcrumb {
+  background-color: #2d2d2d;
+}
+
+body.modo-oscuro .breadcrumb-item + .breadcrumb-item::before {
+  color: #808080;
+}
+
+body.modo-oscuro .breadcrumb-item.active {
+  color: #b0b0b0;
+}
+
+body.modo-oscuro .page-link {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #6ea8fe;
+}
+
+body.modo-oscuro .page-link:hover {
+  background-color: #3a3a3a;
+  border-color: #404040;
+  color: #9ec5fe;
+}
+
+body.modo-oscuro .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+body.modo-oscuro .page-item.disabled .page-link {
+  background-color: #252525;
+  border-color: #404040;
+  color: #6c757d;
+}
+
+/* ===================================
+   BADGES
+   =================================== */
+
+body.modo-oscuro .badge {
+  color: #ffffff;
+}
+
+body.modo-oscuro .badge.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+body.modo-oscuro .badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+body.modo-oscuro .badge.bg-success {
+  background-color: #198754 !important;
+}
+
+body.modo-oscuro .badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+body.modo-oscuro .badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000000 !important;
+}
+
+body.modo-oscuro .badge.bg-info {
+  background-color: #0dcaf0 !important;
+  color: #000000 !important;
+}
+
+/* ===================================
+   SEPARADORES
+   =================================== */
+
+body.modo-oscuro hr {
+  border-color: #404040;
+  opacity: 1;
+}
+
+/* ===================================
+   ICONOS DE TOGGLE PASSWORD
+   =================================== */
+
+body.modo-oscuro .password-toggle {
+  color: #e0e0e0;
+}
+
+body.modo-oscuro .password-toggle:hover {
+  color: var(--hover-items);
+}
+
+/* ===================================
+   INPUTS ESPECÍFICOS
+   =================================== */
+
+body.modo-oscuro .input-dni-reserva {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* ===================================
+   RESPONSIVE - Ajustes para modo oscuro
+   =================================== */
+
+@media (max-width: 768px) {
+  body.modo-oscuro .coche-reserva {
+    background-color: transparent;
+  }
+}

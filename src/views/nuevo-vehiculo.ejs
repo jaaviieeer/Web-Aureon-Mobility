@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('header') %>
+
+    <body>
+        <%- include('navbar') %>
+            <main class="main-reserva container-fluid d-flex flex-column">
+                <%- include('accesibilidad') %>
+                    <h1 class="text-center titulo-app">
+                        <%= esEdicion ? 'Editar vehículo' : 'Dar de alta un nuevo vehículo' %>
+                    </h1>
+                    <div class="card m-3">
+                        <div class="row g-0">
+                            <div
+                                class="col-md-4 bg-light d-flex flex-column align-items-center justify-content-center p-3">
+                                <img src="/img/logo/LogoAureon.png" alt="Logo de Aureon Mobility"
+                                    class="logo-form img-fluid rounded mb-3" />
+                                <p class="text-center">
+                                    <%= esEdicion ? 'Modificar datos del vehículo' : 'Nuevo vehículo' %>
+                                </p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <% if (error) { %>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Error:</strong>
+                                            <%= error %>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Cerrar alerta de error"></button>
+                                        </div>
+                                        <% } %>
+                                            <form method="POST"
+                                                action="<%= esEdicion ? `/vehiculos/admin/${vehiculoId}/editar` : `/vehiculos/admin/nuevo` %>"
+                                                id="formulario-nuevo-vehiculo">
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="marca" class="form-label label-obligatorio">
+                                                            Marca
+                                                        </label>
+                                                        <input type="text" placeholder="Tesla" required minlength="3"
+                                                            aria-describedby="error-marca" class="form-control"
+                                                            id="marca" name="marca" value="<%= marca %>" />
+                                                        <small id="error-marca" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="modelo" class="form-label label-obligatorio">
+                                                            Modelo
+                                                        </label>
+                                                        <input type="text" placeholder="Modelo del vehículo" required
+                                                            aria-describedby="error-modelo" class="form-control"
+                                                            id="modelo" name="modelo" value="<%= modelo %>" />
+                                                        <small id="error-modelo" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="matricula" class="form-label label-obligatorio">
+                                                            Matricula
+                                                        </label>
+                                                        <input type="text" placeholder="Matricula del vehículo" required
+                                                            aria-describedby="error-matricula" class="form-control"
+                                                            id="matricula" name="matricula" value="<%= matricula %>"
+                                                            <%=esEdicion ? 'readonly' : '' %> />
+                                                        <small id="error-matricula" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="anoMatriculacion"
+                                                            class="form-label label-obligatorio">
+                                                            Año de matriculación
+                                                        </label>
+                                                        <input type="number" placeholder="Ano de matriculación" required
+                                                            aria-describedby="error-anoMatriculacion"
+                                                            class="form-control" id="anoMatriculacion"
+                                                            name="anoMatriculacion" value="<%= anoMatriculacion %>" />
+                                                        <small id="error-anoMatriculacion" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="numeroPlazas" class="form-label label-obligatorio">
+                                                            Numero de plazas
+                                                        </label>
+                                                        <input type="number" placeholder="Numero de plazas" required
+                                                            aria-describedby="error-numeroPlazas" class="form-control"
+                                                            id="numeroPlazas" name="numeroPlazas"
+                                                            value="<%= numeroPlazas %>" />
+                                                        <small id="error-numeroPlazas" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="autonomia" class="form-label label-obligatorio">
+                                                            Autonomia (km)
+                                                        </label>
+                                                        <input type="number" placeholder="Autonomia (km)" required
+                                                            aria-describedby="error-autonomia" class="form-control"
+                                                            id="autonomia" name="autonomia" value="<%= autonomia %>" />
+                                                        <small id="error-autonomia" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="color" class="form-label label-obligatorio">
+                                                            Color
+                                                        </label>
+                                                        <input type="text" placeholder="Color del vehículo" required
+                                                            aria-describedby="error-color" class="form-control"
+                                                            id="color" name="color" value="<%= color %>" />
+                                                        <small id="error-color" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="concesionario-vehiculo"
+                                                            class="form-label label-obligatorio" required>
+                                                            Concesionario </label>
+                                                        <select id="concesionario-vehiculo" name="concesionario"
+                                                            class="form-select"
+                                                            aria-describedby="error-concesionario-vehiculo" required>
+                                                            <option value=""> Selecciona un concesionario </option>
+                                                            <% if (concesionarios) { %>
+                                                                <% concesionarios.forEach(c=> { %>
+                                                                    <option value="<%= c.id  %>" <%=concesionario===c.id
+                                                                        ? 'selected' : '' %>>
+                                                                        <%= c.nombre %>
+                                                                    </option>
+                                                                    <% }) %>
+                                                                        <% } %>
+                                                        </select>
+                                                        <small id="error-concesionario-vehiculo" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="precioHora" class="form-label label-obligatorio">
+                                                            Precio/Hora (€)
+                                                        </label>
+                                                        <input type="number" placeholder="Precio por hora" required
+                                                            min="1" step="0.5" aria-describedby="error-precio-hora"
+                                                            class="form-control" id="precioHora" name="precioHora"
+                                                            value="<%= precioHora %>" />
+                                                        <small id="error-precio-hora" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="imagen" class="form-label label-obligatorio">
+                                                            Url imagen
+                                                        </label>
+                                                        <input type="text" placeholder="Url imagen del vehículo"
+                                                            required aria-describedby="error-imagen"
+                                                            class="form-control" id="imagen" name="imagen"
+                                                            value="<%= imagen %>" />
+                                                        <small id="error-imagen" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex gap-2 flex-wrap">
+                                                    <button type="submit" class="btn-aureon" id="boton-enviar-vehiculo"
+                                                        aria-label="<%= esEdicion ? 'Guardar cambios del vehiculo' : 'Crear nuevo vehiculo' %>">
+                                                        <%= esEdicion ? 'Guardar Cambios' : 'Crear vehículo' %>
+                                                    </button>
+                                                    <button type="button" class="btn-aureon"
+                                                        id="boton-cancelar-vehiculo"
+                                                        onclick="window.location.href='/vehiculos/'"
+                                                        aria-label="Cancelar y volver a la lista de vehiculos">
+                                                        Cancelar
+                                                    </button>
+                                                    <% if (!esEdicion) { %>
+                                                        <button type="button" class="btn-aureon"
+                                                            id="boton-resetear-vehiculo"
+                                                            aria-label="Limpiar todos los campos del formulario">
+                                                            Resetear
+                                                        </button>
+                                                        <button type="button" class="btn-aureon"
+                                                            id="boton-autocompletar-vehiculo"
+                                                            aria-label="Autocompletar formulario con datos de ejemplo">
+                                                            Autocompletar
+                                                        </button>
+                                                        <% } %>
+                                                </div>
+                                            </form>
+                                </div>
+                            </div>
+                        </div>
+            </main>
+            <%- include('footer') %>
+    </body>
+
+</html>

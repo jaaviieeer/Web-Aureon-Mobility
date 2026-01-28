@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') %>
+<body>
+  <%- include('navbar') %>
+  <main class="container text-center mt-5 pt-5">
+    <%- include('accesibilidad') %>
+    <h1 class="display-1 text-danger "> Error 404 </h1>
+    <p class="lead"> La página que buscas no existe.</p>
+    <img src="/img/logo/LogoAureon.png" alt="Logo de Aureon Mobility" class="img-fluid rounded mt-3">
+    <br>
+    <p>La dirección <code> <%= url %></code> no existe </p>
+    <a href="/"> Volver a la página de inicio </a>
+  </main>
+  <%- include('footer') %>
+</body>
+</html>

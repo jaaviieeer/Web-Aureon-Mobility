@@ -1,0 +1,112 @@
+<div class="container mt-5 panel-mis-reservas">
+  <div class="row mb-3">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+      <input type="text" class="form-control" id="buscador" placeholder="Buscar por marca o modelo...">
+    </div>
+  </div>
+  <div class="table-responsive mb-3">
+    <table class="table table-bordered table-hover table-striped mb-0" id="tabla-vehiculos">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">Matrícula</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Autonomía
+            <div class="col-md-12 mb-1">
+              <select id="autonomiaRequerida" name="autonomiaRequerida" class="form-select">
+                <option value="" selected>Todas</option>
+                <option value="menor100">Menor a 100 km</option>
+                <option value="100a300">Entre 100 km y 300 km</option>
+                <option value="mayor300">Mayor a 300 km</option>
+              </select>
+            </div>
+          </th>
+          <th scope="col">Plazas
+            <div class="col-md-12 mb-1">
+              <select id="plazasRequeridas" name="plazasRequeridas" class="form-select">
+                <option value="" selected>Todas</option>
+                <option value="2">2 plazas</option>
+                <option value="4">4 plazas</option>
+                <option value="mas4">Mas de 4 plazas</option>
+              </select>
+            </div>
+          </th>
+          <th scope="col">Puntuacion</th>
+          <th scope="col">Concesionario
+            <div class="col-md-12 mb-1">
+              <select id="concesionarioRequerido" name="concesionarioRequerido" class="form-select">
+                <option value="" selected>Todos</option>
+              </select>
+            </div>
+          </th>
+          <th scope="col">Ciudad
+            <div class="col-md-12 mb-1">
+              <select id="ciudadRequerida" name="ciudadRequerida" class="form-select">
+                <option value="" selected>Todas</option>
+              </select>
+            </div>
+          </th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <% if (usuario) { %>
+      <% if (usuario.rol==="admin" ) { %>
+        <div class="d-flex justify-content-end mb-5 p-2">
+          <div class="m-1">
+            <a href="/vehiculos/admin/nuevo" class="btn btn-warning btn-sm" role="button"
+              aria-label="Crear vehículo">Crear</a>
+          </div>
+          <div class="m-1">
+            <button id="abrir-modal-json" class="btn btn-warning btn-sm" role="button"
+              aria-label="Subir JSON de vehiculos" data-bs-toggle="modal" data-bs-target="#modal-json">Subir
+              JSON</button>
+          </div>
+        </div>
+        <% } %>
+          <% } %>
+  </div>
+</div>
+<div class="modal fade" id="modalVehiculo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitulo">Detalles del vehículo</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" title="cerrar"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <p class=""> Información del vehículo correspondiente </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-json" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Selecciona un archivo JSON</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/admin/subir-json" id="formJSON" enctype="multipart/form-data">
+          <input type="file" name="vehiculosJSON" accept=".json" required>
+          <div class="row m-1">
+            <p class="text-danger">* Los datos que ya existan serán actualizados</p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Subir</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('modal-eliminar') %>

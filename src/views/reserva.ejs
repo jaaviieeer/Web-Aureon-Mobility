@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('header') %>
+
+  <body>
+    <%- include('navbar') %>
+      <main class="main-reserva container-fluid d-flex flex-column">
+        <%- include('accesibilidad') %>
+          <h1 class="text-center titulo-app">Formulario de reserva de vehículo</h1>
+          <div class="card m-3">
+            <div class="row g-0">
+              <div class="col-md-4 bg-light d-flex flex-column align-items-center justify-content-center p-3">
+                <img id="imagenVehiculo" src="/img/logo/LogoAureon.png" alt="Logo Aureon"
+                  class="coche-reserva img-fluid rounded mb-3" />
+                <h2 id="nombreVehiculo" class="text-center"> ¡Empieza a mover tu flota de vehículos!</h2>
+                <div class="progress-container mb-4">
+                  <div class="progress-bar-custom">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <div class="progress-text" id="progress-text">0%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <form method="POST" action="/reservas" id="formulario-reserva">
+                    <fieldset class="mb-1">
+                      <legend>Datos personales</legend>
+                      <div class="row">
+                        <div class="col-md-6 mb-1">
+                          <label for="nombre" class="form-label label-obligatorio">
+                            Nombre
+                          </label>
+                          <input type="text" id="nombre" name="nombre" placeholder="Javier" required minlength="3"
+                            aria-describedby="error-nombre" class="form-control" />
+                          <small id="error-nombre" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                          <label for="correo" class="form-label label-obligatorio">
+                            Email
+                          </label>
+                          <input type="email" id="correo" name="correo" placeholder="pepelotas@gmail.com" required
+                            aria-describedby="error-correo" class="form-control" />
+                          <small id="error-correo" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-1">
+                          <label for="telefono" class="form-label label-obligatorio"> Teléfono</label>
+                          <input type="tel" id="telefono" name="telefono" class="form-control" aria-describedby="error-telefono" required/>
+                          <small id="error-telefono" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                          <label for="dni" class="form-label label-obligatorio">
+                            DNI
+                          </label>
+                          <input type="text" id="dni" name="dni" aria-describedby="error-dni" class="form-control input-dni-reserva" required/>
+                          <small id="error-dni" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="mt-1">
+                      <legend>Datos reserva</legend>
+                      <div class="row">
+                        <div class="col-md-6 mb-1">
+                          <label for="fecha-inicio" class="form-label label-obligatorio mt-1">
+                            Fecha inicio
+                          </label>
+                          <input type="date" id="fecha-inicio" name="fecha-inicio" required
+                            aria-describedby="error-fecha-inicio" class="form-control" />
+                          <small id="error-fecha-inicio" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                        <div class="col-md-3 mb-1">
+                          <label for="hora" class="form-label label-obligatorio mt-1"> Hora de inicio </label>
+                          <input type="time" name="hora" id="hora" class="form-control " required />
+                          <small id="error-hora" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                        <div class="col-md-3 mb-1">
+                          <label for="fecha-fin" class="form-label label-obligatorio mt-1">
+                            Fecha fin
+                          </label>
+                          <input type="date" id="fecha-fin" name="fecha-fin" required aria-describedby="error-fecha-fin"
+                            class="form-control" />
+                          <small id="error-fecha-fin" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 mb-1">
+                          <label for="seleccion-vehiculo" class="form-label label-obligatorio">
+                            Elige vehículo</label>
+                          <select id="seleccion-vehiculo" name="seleccion-vehiculo" aria-describedby="error-vehiculo"
+                            class="form-select">
+
+                            <% if (vehiculos && vehiculos.length>0) { %>
+                              <option value="0">Selecciona vehiculo</option>
+                              <% vehiculos.forEach(v=> { %>
+                                <option value="<%= v.id %>" data-marca="<%= v.marca%>" data-modelo="<%= v.modelo%>"
+                                  data-imagen="/img/vehiculos/<%= v.imagen%>">
+                                  <%= v.marca + " " + v.modelo %> - <%= v.matricula %>
+                                </option>
+                                <% }) %>
+                                  <% } else { %>
+                                    <option disabled> No hay vehículos disponibles</option>
+                                    <% } %>
+                          </select>
+                          <small id="error-vehiculo" class="error-mensaje" aria-live="polite"></small>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="p-2">
+                      <label for="condiciones">
+                        <input type="checkbox" id="condiciones" name="condiciones" required class="form-check-input" />
+                        <a href="" aria-label="Condiciones y términos de la reserva">
+                          Acepta las condiciones
+                        </a>
+                      </label>
+                    </div>
+                    <button type="submit" class="btn-aureon" id="boton-enviar" disabled>
+                      Enviar
+                    </button>
+                    <button type="button" class="btn-aureon" id="boton-resetear">
+                      Resetear
+                    </button>
+                    <button type="button" class="btn-aureon" id="boton-autocompletar">
+                      Autocompletar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </main>
+
+      <%- include('footer') %>
+  </body>
+
+</html>

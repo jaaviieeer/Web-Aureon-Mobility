@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('header') %>
+
+    <body>
+        <%- include('navbar') %>
+            <main class="main-reserva container-fluid d-flex flex-column">
+                <%- include('accesibilidad') %>
+                    <h1 class="text-center titulo-app">
+                        <%= esEdicion ? 'Editar concesionario' : 'Dar de alta un nuevo concesionario' %>
+                    </h1>
+                    <div class="card m-3">
+                        <div class="row g-0">
+                            <div
+                                class="col-md-4 bg-light d-flex flex-column align-items-center justify-content-center p-3">
+                                <img src="/img/logo/LogoAureon.png" alt="Logo de Aureon Mobility"
+                                    class="logo-form img-fluid rounded mb-3" />
+                                <p class="text-center">
+                                    <%= esEdicion ? 'Modificar datos del concesionario' : 'Nuevo concesionario' %>
+                                </p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <% if (error) { %>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Error:</strong>
+                                            <%= error %>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Cerrar alerta de error"></button>
+                                        </div>
+                                        <% } %>
+                                            <form method="POST" action="<%= esEdicion ? `/concesionarios/admin/${concesionarioId}/editar` : `/concesionarios/admin/nuevo` %>"
+                                                id="formulario-nuevo-concesionario">
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label for="nombre-concesionario"
+                                                            class="form-label label-obligatorio">
+                                                            Nombre
+                                                        </label>
+                                                        <input type="text" placeholder="AutoPremium Madrid" required
+                                                            minlength="3" aria-describedby="error-nombre-concesionario"
+                                                            class="form-control" id="nombre-concesionario"
+                                                            name="nombre" value="<%= nombre %>" />
+                                                        <small id="error-nombre-concesionario" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label for="ciudad-concesionario"
+                                                            class="form-label label-obligatorio">
+                                                            Ciudad
+                                                        </label>
+                                                        <input type="text" placeholder="Madrid" required minlength="2"
+                                                            aria-describedby="error-ciudad-concesionario"
+                                                            class="form-control" id="ciudad-concesionario"
+                                                            name="ciudad" value="<%= ciudad %>" />
+                                                        <small id="error-ciudad-concesionario" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label for="direccion-concesionario"
+                                                            class="form-label label-obligatorio">
+                                                            Dirección
+                                                        </label>
+                                                        <input type="text" placeholder="Calle Salmos" required
+                                                            minlength="5"
+                                                            aria-describedby="error-direccion-concesionario"
+                                                            class="form-control" id="direccion-concesionario"
+                                                            name="direccion" value="<%= direccion %>" />
+                                                        <small id="error-direccion-concesionario" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label for="telefono-concesionario"
+                                                            class="form-label label-obligatorio">
+                                                            Teléfono
+                                                        </label>
+                                                        <input type="tel" placeholder="+34 912345678" required
+                                                            aria-describedby="error-telefono-concesionario"
+                                                            class="form-control" id="telefono-concesionario"
+                                                            name="telefono" value="<%= telefono %>" />
+                                                        <small id="error-telefono-concesionario" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex gap-2 flex-wrap">
+                                                    <button type="submit" class="btn-aureon"
+                                                        id="boton-enviar-concesionario"
+                                                        aria-label="<%= esEdicion ? 'Guardar cambios del concesionario' : 'Crear nuevo concesionario' %>">
+                                                        <%= esEdicion ? 'Guardar Cambios' : 'Crear Concesionario' %>
+                                                    </button>
+                                                    <button type="button" class="btn-aureon"
+                                                        id="boton-cancelar-concesionario"
+                                                        onclick="window.location.href='/admin/'"
+                                                        aria-label="Cancelar y volver al panel de admin">
+                                                        Cancelar
+                                                    </button>
+                                                    <% if (!esEdicion) { %>
+                                                        <button type="button" class="btn-aureon"
+                                                            id="boton-resetear-concesionario"
+                                                            aria-label="Limpiar todos los campos del formulario">
+                                                            Resetear
+                                                        </button>
+                                                        <button type="button" class="btn-aureon"
+                                                            id="boton-autocompletar-concesionario"
+                                                            aria-label="Autocompletar formulario con datos de ejemplo">
+                                                            Autocompletar
+                                                        </button>
+                                                        <% } %>
+                                                </div>
+                                            </form>
+                                </div>
+                            </div>
+                        </div>
+            </main>
+            <%- include('footer') %>
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<div class="container mt-5 pt-5 panel-mis-reservas">
+    <h2 class="mb-4 text-center">Concesionarios de Aureon Mobility</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped" id="tabla-concesionarios">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">ID concesionario</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <% if (usuario) { %>
+            <% if (usuario.rol==="admin" ) { %>
+                <div class="d-flex justify-content-end mb-5 p-2">
+                    <a href="/concesionarios/admin/nuevo" class="btn btn-warning btn-sm" role="button"
+                        aria-label="Crear concesionario">Crear</a>
+                </div>
+                <% } %>
+                    <% } %>
+    </div>
+</div>
+<%- include('modal-eliminar') %>

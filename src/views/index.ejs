@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') %>
+
+  <body>
+    <%- include('navbar') %>
+      <main>
+        <%- include('accesibilidad') %>
+            <div id="carrusel" class="carousel slide" data-bs-ride="carrusel">
+              <ol class="carousel-indicators">
+                <li data-bs-target="#carrusel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carrusel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carrusel" data-bs-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                  <img class="d-block w-100 c-img" src="/img/enterprise/enterprise-1.png" alt="Foto 1">
+                </div>
+                <div class="carousel-item c-item">
+                  <img class="d-block w-100 c-img" src="/img/enterprise/enterprise-2.png" alt="Foto 2">
+                </div>
+                <div class="carousel-item c-item">
+                  <img class="d-block w-100 c-img" src="/img/enterprise/enterprise-3.png" alt="Foto 3">
+                </div>
+              </div>
+              <div
+                class="texto-carrusel d-flex flex-column justify-content-center align-items-center text-center m-3">
+                <h1>
+                  Bienvenido a "<span>Aureon Mobility</span>"
+                  <% if (usuario) { %>
+                    , <%= usuario.nombre %>
+                      <% } %>
+                </h1>
+                <h2>
+                  Empieza a mover tu flota de coches eléctricos <% if (usuario) { %>
+                    , <%= usuario.nombre %>
+                      <% } %>
+                </h2>
+                <% if (!usuario) { %>
+                  <p class="lead text-white">
+                    Reserva vehículos de <em>tu concesionario</em>, gestiona tus viajes y
+                    lleva el control de tus <strong>reservas</strong> de forma rápida y
+                    accesible.
+                  </p>
+                  <% } else {%>
+                    <p class="lead text-white">
+                      Eres <strong>
+                        <%= usuario.nombre %>
+                      </strong> y tienes el rol de <strong>
+                        <%= usuario.rol %>
+                      </strong>
+                    </p>
+                    <% } %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev"
+                title="Previous">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next"
+                title="Next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <%- include('mapa') %>
+      </main>
+      <%- include('footer') %>
+  </body>
+  <html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('header') %>
+
+    <body>
+        <%- include('navbar') %>
+            <main class="main-reserva container-fluid d-flex flex-column">
+                <%- include('accesibilidad') %>
+                    <h1 class="text-center titulo-app">
+                        <%= esEdicion ? 'Editar Usuario' : '¡Registra empleados o administradores en Aureon!' %>
+                    </h1>
+                    <div class="card m-3">
+                        <div class="row g-0">
+                            <div
+                                class="col-md-4 bg-light d-flex flex-column align-items-center justify-content-center p-3">
+                                <img src="/img/logo/LogoAureon.png" alt="Logo de Aureon Mobility"
+                                    class="logo-form img-fluid rounded mb-3" />
+                                <p class="text-center">
+                                    <%= esEdicion ? 'Modificar datos del usuario'
+                                        : 'Empieza a mover tu flota de coches eléctricos' %>
+                                </p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <form method="POST"
+                                        action="<%= esEdicion ? '/usuarios/admin/' + usuarioId + '/editar' : '/usuarios/admin/nuevo' %>"
+                                        id="formulario-registro">
+
+                                        <% if (error) { %>
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <strong>Error: </strong>
+                                                <%= error %>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Cerrar"></button>
+                                            </div>
+                                            <% } %>
+
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="nombre-registro"
+                                                            class="form-label label-obligatorio">
+                                                            Nombre
+                                                        </label>
+                                                        <input type="text" placeholder="Javier" required minlength="3"
+                                                            aria-describedby="error-nombre-registro"
+                                                            class="form-control" id="nombre-registro" name="nombre"
+                                                            value="<%= nombre %>" />
+                                                        <small id="error-nombre-registro" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <label for="correo-registro"
+                                                            class="form-label label-obligatorio">
+                                                            Email
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <input type="text" placeholder="nombre" required
+                                                                pattern="[a-zA-Z0-9._-]+"
+                                                                title="Solo letras, números, puntos, guiones y guiones bajos"
+                                                                aria-describedby="error-correo-registro"
+                                                                class="form-control" id="correo-registro"
+                                                                name="correo-usuario"
+                                                                value="<%= correo ? correo.replace('@aureon.es', '') : '' %>" />
+                                                            <span class="input-group-text">@aureon.es</span>
+                                                        </div>
+                                                        <input type="hidden" id="correo-completo" name="correo"
+                                                            value="<%= correo || '' %>" />
+                                                        <small id="error-correo-registro" class="error-mensaje"
+                                                            aria-live="polite"></small>
+                                                    </div>
+                                                </div>
+                                                <% if (!esEdicion) { %>
+                                                    <div class="row">
+                                                        <div class="col-md-12 mb-1">
+                                                            <label for="contraseña-registro"
+                                                                class="form-label label-obligatorio">
+                                                                Contraseña
+                                                            </label>
+                                                            <div class="password-wrapper position-relative">
+                                                                <input type="password" id="contraseña-registro"
+                                                                    aria-describedby="error-contraseña-registro"
+                                                                    class="form-control" required name="contraseña" />
+                                                                <i class="bi bi-eye password-toggle position-absolute top-50 end-0 translate-middle-y me-3"
+                                                                    id="togglePasswordRegistro"
+                                                                    title="Mostrar contraseña"
+                                                                    aria-label="Mostrar contraseña"></i>
+                                                            </div>
+                                                            <small id="error-contraseña-registro" class="error-mensaje"
+                                                                aria-live="polite"></small>
+                                                        </div>
+                                                        <div class="col-md-12 mb-1">
+                                                            <label for="repetir-contraseña-registro"
+                                                                class="form-label label-obligatorio">
+                                                                Repetir contraseña
+                                                            </label>
+                                                            <div class="password-wrapper position-relative">
+                                                                <input type="password" id="repetir-contraseña-registro"
+                                                                    aria-describedby="error-repetir-contraseña-registro"
+                                                                    class="form-control" required
+                                                                    name="repetir-contraseña" />
+                                                                <i class="bi bi-eye password-toggle position-absolute top-50 end-0 translate-middle-y me-3"
+                                                                    id="toggleRepetirPasswordRegistro"
+                                                                    title="Mostrar contraseña"
+                                                                    aria-label="Mostrar contraseña"></i>
+                                                            </div>
+                                                            <small id="error-repetir-contraseña-registro"
+                                                                class="error-mensaje" aria-live="polite"></small>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-1">
+                                                                <label for="telefono-registro" class="form-label">
+                                                                    Teléfono (opcional)</label>
+                                                                <input type="tel" id="telefono-registro"
+                                                                    class="form-control" name="telefono"
+                                                                    value="<%= telefono %>" placeholder="646734676"
+                                                                    aria-describedby="error-telefono-registro" />
+                                                                <small id="error-telefono-registro"
+                                                                    class="error-mensaje" aria-live="polite"></small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-1">
+                                                                <label for="rol-registro"
+                                                                    class="form-label label-obligatorio">
+                                                                    Rol
+                                                                </label>
+                                                                <select id="rol-registro" name="rol" class="form-select"
+                                                                    required aria-describedby="error-rol-registro">
+                                                                    <option value="">Selecciona un rol</option>
+                                                                    <option value="empleado" <%=rol==='empleado'
+                                                                        ? 'selected' : '' %>>Empleado</option>
+                                                                    <option value="admin" <%=rol==='admin' ? 'selected'
+                                                                        : '' %>>Admin</option>
+                                                                </select>
+                                                                <small id="error-rol-registro" class="error-mensaje"
+                                                                    aria-live="polite"></small>
+                                                            </div>
+                                                            <div class="col-md-6 mb-1">
+                                                                <label for="concesionario-registro"
+                                                                    class="form-label label-obligatorio">
+                                                                    Concesionario
+                                                                </label>
+                                                                <select id="concesionario-registro" name="concesionario"
+                                                                    class="form-select" required
+                                                                    aria-describedby="error-concesionario-registro">
+                                                                    <option value="">Selecciona un concesionario
+                                                                    </option>
+                                                                    <% if (concesionarios) { %>
+                                                                        <% concesionarios.forEach(c=> { %>
+                                                                            <option value="<%= c.id %>"
+                                                                                <%=concesionario==c.id ? 'selected' : ''
+                                                                                %>>
+                                                                                <%= c.nombre %> - <%= c.ciudad %>
+                                                                            </option>
+                                                                            <% }); %>
+                                                                                <% } %>
+                                                                </select>
+                                                                <small id="error-concesionario-registro"
+                                                                    class="error-mensaje" aria-live="polite"></small>
+                                                            </div>
+                                                        </div>
+                                                        <% if (!esEdicion) { %>
+                                                            <div class="p-2">
+                                                                <label for="condiciones-registro">
+                                                                    <input type="checkbox" id="condiciones-registro"
+                                                                        name="condiciones" required
+                                                                        class="form-check-input" />
+                                                                    <a href="#"
+                                                                        aria-label="Condiciones y términos de la reserva"
+                                                                        class="ps-2">
+                                                                        Acepta las condiciones
+                                                                    </a>
+                                                                </label>
+                                                            </div>
+                                                            <% } %>
+
+                                                                <div class="d-flex gap-2 flex-wrap">
+                                                                    <button type="submit" class="btn-aureon"
+                                                                        id="boton-enviar-registro">
+                                                                        <%= esEdicion ? 'Guardar Cambios'
+                                                                            : 'Crear Usuario' %>
+                                                                    </button>
+
+                                                                    <button type="button" class="btn-aureon"
+                                                                        onclick="window.location.href='/admin/'">
+                                                                        Cancelar
+                                                                    </button>
+
+                                                                    <% if (!esEdicion) { %>
+                                                                        <button type="button" class="btn-aureon"
+                                                                            id="boton-resetear-registro">
+                                                                            Resetear
+                                                                        </button>
+                                                                        <button type="button" class="btn-aureon"
+                                                                            id="boton-autocompletar-registro">
+                                                                            Autocompletar
+                                                                        </button>
+                                                                        <% } %>
+                                                                </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </main>
+            <%- include('footer') %>
+    </body>
+
+</html>

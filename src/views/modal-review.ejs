@@ -1,0 +1,33 @@
+<div class="modal fade" id="modalReview" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="modalEliminarLabel">
+                    Valorar vehículo
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-3">
+                    ¿Que puntuación general le da el cliente al vehiculo?
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <select id="puntuacionVehiculo" class="form-select" aria-label="Selecciona una puntuación">
+                        <option value="1">1 - Muy malo</option>
+                        <option value="2">2 - Malo</option>
+                        <option value="3">3 - Regular</option>
+                        <option value="4">4 - Bueno</option>
+                        <option value="5">5 - Excelente</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-end gap-3">
+                        <button type="button" class="btn btn-danger" id="botonReview">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

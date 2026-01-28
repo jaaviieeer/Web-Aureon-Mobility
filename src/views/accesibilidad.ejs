@@ -1,0 +1,165 @@
+<div class="modal fade" id="dialogoAccesibilidad">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Ajustes de accesibilidad</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" id="accesibilidadTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual" type="button"
+              role="tab" aria-controls="visual" aria-selected="true">
+              Visual
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="atajos-tab" data-bs-toggle="tab" data-bs-target="#atajos" type="button"
+              role="tab" aria-controls="atajos" aria-selected="false">
+              Atajos de teclado
+            </button>
+        </ul>
+        <div class="tab-content" id="accesibilidadTabsContent">
+          <div class="tab-pane fade show active" id="visual" role="tabpanel" aria-labelledby="visual-tab">
+            <div class="mb-4">
+              <h5>Tema</h5>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="botonModoOscuro" role="switch" />
+                <label class="form-check-label" for="botonModoOscuro">
+                  <span id="textoModoOscuro">Modo oscuro</span></label>
+              </div>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5>Contraste</h5>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="botonAltoContraste" role="switch" />
+                <label class="form-check-label" for="botonAltoContraste">Alto contraste</label>
+              </div>
+              <small class="text-muted">El alto contraste funciona en ambos modos (claro y oscuro)</small>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5>Tamaño de fuente</h5>
+              <div class="btn-group w-100" role="group" aria-label="Seleccionar tamaño de fuente">
+                <button type="button" class="btn btn-outline-primary" id="letraPequena">
+                  <span class="d-block">Pequeña</span>
+                </button>
+                <button type="button" class="btn btn-outline-primary" id="letraNormal">
+                  <span class="d-block">Normal</span>
+                </button>
+                <button type="button" class="btn btn-outline-primary" id="letraGrande">
+                  <span class="d-block">Grande</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="atajos" role="tabpanel" aria-labelledby="atajos-tab">
+            <div class="alert-info m-2">
+              <strong>Cómo usar:</strong> Tienes que hacer click en el campo y presionar la combinación de teclas que
+              desees asignar.
+            </div>
+            <div class="mb-4">
+              <h5>Navegación</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-irInicio">Ir a inicio</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-irInicio" data-atajo="irInicio"
+                    placeholder="Alt+H" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-irVehiculos">
+                    Ir a vehículos
+                  </label>
+                  <input type="text" class="form-control atajo-input" id="atajo-irVehiculos" data-atajo="irVehiculos"
+                    placeholder="Alt+V" readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-irReservas">Ir a Reservas</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-irReservas" data-atajo="irReservas"
+                    placeholder="Alt+R" readonly />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5>Accesibilidad</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-toggleModoOscuro">Alternar modo oscuro</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-toggleModoOscuro"
+                    data-atajo="toggleModoOscuro" placeholder="Alt+D" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-toggleAltoContraste">Alternar alto contraste</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-toggleAltoContraste"
+                    data-atajo="toggleAltoContraste" placeholder="Alt+C" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-aumentarFuente">Aumentar fuente</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-aumentarFuente"
+                    data-atajo="aumentarFuente" placeholder="Ctrl++" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-reducirFuente">Reducir fuente</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-reducirFuente"
+                    data-atajo="reducirFuente" placeholder="Ctrl+-" readonly />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5>Acciones</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-guardar">Guardar</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-guardar" data-atajo="guardar"
+                    placeholder="Ctrl+S" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="atajo-buscar">Buscar</label>
+                  <input type="text" class="form-control atajo-input" id="atajo-buscar" data-atajo="buscar"
+                    placeholder="Ctrl+F" readonly />
+                </div>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-outline-secondary btn-sm" id="btnRestaurarAtajos">
+                Restaurar predeterminados
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <% if (usuario) { %>
+          <div id="mensajeGuardado" class="alert alert-success alert-dismissible fade show d-none mt-3" role="alert">
+            <strong>¡Éxito!</strong> Preferencias guardadas correctamente.
+            <button type="button" class="btn-close" aria-label="Cerrar mensaje"
+              onclick="cerrarMensaje('mensajeGuardado')"></button>
+          </div>
+
+          <div id="mensajeError" class="alert alert-danger alert-dismissible fade show d-none mt-3" role="alert">
+            <strong>Error:</strong> <span id="textoError">No se pudieron guardar las preferencias.</span>
+            <button type="button" class="btn-close" aria-label="Cerrar mensaje"
+              onclick="cerrarMensaje('mensajeError')"></button>
+          </div>
+          <% } %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+
+        <% if (usuario) { %>
+          <button type="button" class="btn btn-primary" id="guardarPreferencias">
+            <span id="spinnerGuardar" class="spinner-border spinner-border-sm d-none me-1" role="status"
+              aria-hidden="true"></span>
+            Guardar preferencias
+          </button>
+          <% } %>
+      </div>
+    </div>
+  </div>
+</div>

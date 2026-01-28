@@ -1,0 +1,367 @@
+[
+  {
+    "id": 1,
+    "nombre": "Aureon Mobility Atocha",
+    "ciudad": "Madrid",
+    "direccion": "Calle Atocha 45",
+    "telefono_contacto": "910112233",
+    "activo": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Aureon Mobility Gran Vía",
+    "ciudad": "Madrid",
+    "direccion": "Gran Vía 12",
+    "telefono_contacto": "910223344",
+    "activo": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Aureon Mobility Goya",
+    "ciudad": "Madrid",
+    "direccion": "Calle Goya 88",
+    "telefono_contacto": "910334455",
+    "activo": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Aureon Mobility Castellana",
+    "ciudad": "Madrid",
+    "direccion": "Paseo de la Castellana 210",
+    "telefono_contacto": "910445566",
+    "activo": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Aureon Mobility Príncipe Pío",
+    "ciudad": "Madrid",
+    "direccion": "Cuesta de San Vicente 19",
+    "telefono_contacto": "910556677",
+    "activo": 1
+  },
+  {
+    "id": 6,
+    "nombre": "Aureon Mobility Chamberí",
+    "ciudad": "Madrid",
+    "direccion": "Calle Fuencarral 130",
+    "telefono_contacto": "910667788",
+    "activo": 1
+  },
+  {
+    "id": 7,
+    "nombre": "Aureon Mobility Malasaña",
+    "ciudad": "Madrid",
+    "direccion": "Calle Espíritu Santo 25",
+    "telefono_contacto": "910778899",
+    "activo": 1
+  },
+  {
+    "id": 8,
+    "nombre": "Aureon Mobility Retiro",
+    "ciudad": "Madrid",
+    "direccion": "Calle O'Donnell 21",
+    "telefono_contacto": "910889900",
+    "activo": 1
+  },
+  {
+    "id": 9,
+    "nombre": "Aureon Mobility Ciudad Lineal",
+    "ciudad": "Madrid",
+    "direccion": "Calle Alcalá 420",
+    "telefono_contacto": "910990011",
+    "activo": 1
+  },
+  {
+    "id": 10,
+    "nombre": "Aureon Mobility Salamanca",
+    "ciudad": "Madrid",
+    "direccion": "Calle Serrano 78",
+    "telefono_contacto": "911001122",
+    "activo": 1
+  },
+  {
+    "id": 11,
+    "nombre": "Aureon Mobility Tetuán",
+    "ciudad": "Madrid",
+    "direccion": "Calle Bravo Murillo 250",
+    "telefono_contacto": "911112233",
+    "activo": 1
+  },
+  {
+    "id": 12,
+    "nombre": "Aureon Mobility Delicias",
+    "ciudad": "Madrid",
+    "direccion": "Paseo de las Delicias 130",
+    "telefono_contacto": "911223344",
+    "activo": 1
+  },
+  {
+    "id": 13,
+    "nombre": "Aureon Mobility Vallecas",
+    "ciudad": "Madrid",
+    "direccion": "Avenida de la Albufera 150",
+    "telefono_contacto": "911334455",
+    "activo": 1
+  },
+  {
+    "id": 14,
+    "nombre": "Aureon Mobility Carabanchel",
+    "ciudad": "Madrid",
+    "direccion": "Calle General Ricardos 200",
+    "telefono_contacto": "911445566",
+    "activo": 1
+  },
+  {
+    "id": 15,
+    "nombre": "Aureon Mobility Usera",
+    "ciudad": "Madrid",
+    "direccion": "Avenida Rafaela Ybarra 30",
+    "telefono_contacto": "911556677",
+    "activo": 1
+  },
+  {
+    "id": 16,
+    "nombre": "Aureon Mobility Hortaleza",
+    "ciudad": "Madrid",
+    "direccion": "Avenida de San Luis 80",
+    "telefono_contacto": "911667788",
+    "activo": 1
+  },
+  {
+    "id": 17,
+    "nombre": "Aureon Mobility Moncloa",
+    "ciudad": "Madrid",
+    "direccion": "Calle Princesa 55",
+    "telefono_contacto": "911778899",
+    "activo": 1
+  },
+  {
+    "id": 18,
+    "nombre": "Aureon Mobility Arganzuela",
+    "ciudad": "Madrid",
+    "direccion": "Paseo de Yeserías 10",
+    "telefono_contacto": "911889900",
+    "activo": 1
+  },
+  {
+    "id": 19,
+    "nombre": "Aureon Mobility Barajas",
+    "ciudad": "Madrid",
+    "direccion": "Avenida de Logroño 310",
+    "telefono_contacto": "912001122",
+    "activo": 1
+  },
+  {
+    "id": 20,
+    "nombre": "Aureon Mobility Las Rosas",
+    "ciudad": "Madrid",
+    "direccion": "Avenida de Guadalajara 90",
+    "telefono_contacto": "912112233",
+    "activo": 1
+  },
+
+  {
+    "id": 21,
+    "nombre": "Aureon Mobility Barcelona Centro",
+    "ciudad": "Barcelona",
+    "direccion": "Carrer de Balmes 250",
+    "telefono_contacto": "931112233",
+    "activo": 1
+  },
+  {
+    "id": 22,
+    "nombre": "Aureon Mobility Sagrada Familia",
+    "ciudad": "Barcelona",
+    "direccion": "Carrer Mallorca 420",
+    "telefono_contacto": "931223344",
+    "activo": 1
+  },
+  {
+    "id": 23,
+    "nombre": "Aureon Mobility Poblenou",
+    "ciudad": "Barcelona",
+    "direccion": "Rambla del Poblenou 78",
+    "telefono_contacto": "931334455",
+    "activo": 1
+  },
+
+  {
+    "id": 24,
+    "nombre": "Aureon Mobility Valencia Norte",
+    "ciudad": "Valencia",
+    "direccion": "Avenida Aragón 18",
+    "telefono_contacto": "961112233",
+    "activo": 1
+  },
+  {
+    "id": 25,
+    "nombre": "Aureon Mobility Valencia Centro",
+    "ciudad": "Valencia",
+    "direccion": "Carrer Colón 55",
+    "telefono_contacto": "961223344",
+    "activo": 1
+  },
+
+  {
+    "id": 26,
+    "nombre": "Aureon Mobility Sevilla Centro",
+    "ciudad": "Sevilla",
+    "direccion": "Avenida Constitución 32",
+    "telefono_contacto": "954112233",
+    "activo": 1
+  },
+  {
+    "id": 27,
+    "nombre": "Aureon Mobility Triana",
+    "ciudad": "Sevilla",
+    "direccion": "Calle San Jacinto 80",
+    "telefono_contacto": "954223344",
+    "activo": 1
+  },
+
+  {
+    "id": 28,
+    "nombre": "Aureon Mobility Bilbao Abando",
+    "ciudad": "Bilbao",
+    "direccion": "Gran Vía 45",
+    "telefono_contacto": "944112233",
+    "activo": 1
+  },
+  {
+    "id": 29,
+    "nombre": "Aureon Mobility San Mamés",
+    "ciudad": "Bilbao",
+    "direccion": "Calle Luis Briñas 12",
+    "telefono_contacto": "944223344",
+    "activo": 1
+  },
+
+  {
+    "id": 30,
+    "nombre": "Aureon Mobility Zaragoza Centro",
+    "ciudad": "Zaragoza",
+    "direccion": "Paseo Independencia 20",
+    "telefono_contacto": "976112233",
+    "activo": 1
+  },
+  {
+    "id": 31,
+    "nombre": "Aureon Mobility Valencia Sur",
+    "ciudad": "Valencia",
+    "direccion": "Avenida Ausiàs March 120",
+    "telefono_contacto": "961334455",
+    "activo": 1
+  },
+  {
+    "id": 32,
+    "nombre": "Aureon Mobility Málaga Centro",
+    "ciudad": "Málaga",
+    "direccion": "Calle Larios 15",
+    "telefono_contacto": "952112233",
+    "activo": 1
+  },
+  {
+    "id": 33,
+    "nombre": "Aureon Mobility Marbella",
+    "ciudad": "Málaga",
+    "direccion": "Avenida Ricardo Soriano 60",
+    "telefono_contacto": "952223344",
+    "activo": 1
+  },
+  {
+    "id": 34,
+    "nombre": "Aureon Mobility Cádiz Centro",
+    "ciudad": "Cádiz",
+    "direccion": "Avenida Andalucía 85",
+    "telefono_contacto": "956112233",
+    "activo": 1
+  },
+  {
+    "id": 35,
+    "nombre": "Aureon Mobility Córdoba",
+    "ciudad": "Córdoba",
+    "direccion": "Avenida Medina Azahara 10",
+    "telefono_contacto": "957112233",
+    "activo": 1
+  },
+  {
+    "id": 36,
+    "nombre": "Aureon Mobility Granada",
+    "ciudad": "Granada",
+    "direccion": "Camino de Ronda 180",
+    "telefono_contacto": "958112233",
+    "activo": 1
+  },
+  {
+    "id": 37,
+    "nombre": "Aureon Mobility Valladolid",
+    "ciudad": "Valladolid",
+    "direccion": "Paseo Zorrilla 45",
+    "telefono_contacto": "983112233",
+    "activo": 1
+  },
+  {
+    "id": 38,
+    "nombre": "Aureon Mobility Gijón",
+    "ciudad": "Gijón",
+    "direccion": "Avenida Constitución 22",
+    "telefono_contacto": "984112233",
+    "activo": 1
+  },
+  {
+    "id": 39,
+    "nombre": "Aureon Mobility Oviedo",
+    "ciudad": "Oviedo",
+    "direccion": "Calle Uría 52",
+    "telefono_contacto": "985112233",
+    "activo": 1
+  },
+  {
+    "id": 40,
+    "nombre": "Aureon Mobility Santander",
+    "ciudad": "Santander",
+    "direccion": "Calle Burgos 5",
+    "telefono_contacto": "942112233",
+    "activo": 1
+  },
+  {
+    "id": 41,
+    "nombre": "Aureon Mobility A Coruña",
+    "ciudad": "A Coruña",
+    "direccion": "Calle Real 142",
+    "telefono_contacto": "981112233",
+    "activo": 1
+  },
+  {
+    "id": 42,
+    "nombre": "Aureon Mobility Vigo",
+    "ciudad": "Vigo",
+    "direccion": "Avenida Gran Vía 92",
+    "telefono_contacto": "986112233",
+    "activo": 1
+  },
+  {
+    "id": 43,
+    "nombre": "Aureon Mobility Pamplona",
+    "ciudad": "Pamplona",
+    "direccion": "Avenida Carlos III 40",
+    "telefono_contacto": "948112233",
+    "activo": 1
+  },
+  {
+    "id": 44,
+    "nombre": "Aureon Mobility Murcia",
+    "ciudad": "Murcia",
+    "direccion": "Gran Vía Escultor Salzillo 15",
+    "telefono_contacto": "968112233",
+    "activo": 1
+  },
+  {
+    "id": 45,
+    "nombre": "Aureon Mobility Alicante",
+    "ciudad": "Alicante",
+    "direccion": "Avenida Maisonnave 20",
+    "telefono_contacto": "965112233",
+    "activo": 1
+  }
+]

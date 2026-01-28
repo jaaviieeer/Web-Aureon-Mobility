@@ -1,0 +1,62 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand">
+        <img id="logoNavbarAureon" src="/img/logo/LogoAureon.png" alt="Logo de Aureon Mobility"
+          class="logo-aureon d-inline-block align-text" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Menú de la aplicación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav me-auto justify-content-center mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/" aria-label="Sección de inicio" class="nav-link navbar-enlace">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a accesskey="v" href="/vehiculos" aria-label="Sección de vehículos"
+              class="nav-link navbar-enlace">Vehículos</a>
+          </li>
+          <% if (usuario) { %>
+            <li class="nav-item">
+              <a href="/reservas" aria-label="Sección de reservas" class="nav-link navbar-enlace">Reservar</a>
+            </li>
+            <li class="nav-item">
+              <a href="/usuarios/panel" aria-label="Panel general" class="nav-link navbar-enlace">Panel</a>
+            </li>
+
+            <% if (usuario.rol==="admin" ) { %>
+              <li class="nav-item">
+                <a href="/admin" aria-label="Panel general" class="nav-link navbar-enlace">Admin</a>
+              </li>
+              <% } %>
+                <% } %>
+
+        </ul>
+        <div class="d-flex ms-auto botones align-items-center navbar-mobile-center">
+          <a class="nav-link navbar-enlace me-4" aria-label="Abrir menu de accesibilidad" role="button" data-bs-toggle="modal"
+            data-bs-target="#dialogoAccesibilidad">
+            Accesibilidad
+          </a>
+          <% if (usuario) { %>
+            <% if (usuario.rol==="admin" ) { %>
+              <a href="/usuarios/admin/nuevo" class="btn btn-primary btn-sm me-3">
+                Registrar nuevo usuario
+              </a>
+              <% } %>
+                <a href="/usuarios/logout" class="btn btn-danger btn-sm me-3">
+                  Cerrar sesión
+                </a>
+                <% } else {%>
+
+                  <a href="/login" class="btn btn-outline-dark btn-sm me-3">
+                    Iniciar sesión
+                  </a>
+                  <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

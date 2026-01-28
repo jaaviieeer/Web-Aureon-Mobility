@@ -1,0 +1,81 @@
+<div class="card-body ">
+    <h4 class="text-muted p-2">Estadísticas de concesionarios </h4>
+    <% if (estadisticas.length===0) { %>
+        <div class="alert alert-info">
+            No hay estadísticas disponibles en este momento
+        </div>
+        <% } else { %>
+            <div id="carouselEstadisticas" class="carousel slide">
+                <div class="carousel-indicators">
+                    <% for (let i=0; i < estadisticas.length; i++) { %>
+                        <button type="button" data-bs-target="#carouselEstadisticas" data-bs-slide-to="<%= i %>"
+                            class="<%= i === 0 ? 'active' : '' %>" aria-current="<%= i === 0 ? 'true' : 'false' %>"
+                            aria-label="Slide <%= i + 1 %>">
+                        </button>
+                        <% } %>
+                </div>
+                <div class="carousel-inner py-4">
+                    <% estadisticas.forEach(function(e, index) { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                            <div class="d-flex justify-content-center">
+                                <div class="card h-100 shadow-sm" style="width: 24rem;">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="card-title mb-0 p-2">
+                                            <%= e.nombre_concesionario %>
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle mb-3 text-muted">
+                                            <%= e.ciudad %>
+                                        </h6>
+
+                                        <div class="mb-3">
+                                            <p class="card-text mb-1">
+                                                <strong>Total reservas:</strong>
+                                            </p>
+                                            <h3 class="text-primary mb-0">
+                                                <%= e.total_reservas %>
+                                            </h3>
+                                        </div>
+
+                                        <hr>
+
+                                        <div>
+                                            <p class="card-text mb-2">
+                                                <strong>Vehículo más usado:</strong>
+                                            </p>
+                                            <% if (e.vehiculo_mas_usado) { %>
+                                                <p class="text-muted mb-0">
+                                                    <span class="badge bg-success">
+                                                        <%= e.vehiculo_mas_usado %>
+                                                    </span>
+                                                    <small>
+                                                        <%= e.veces_reservado %> reservas
+                                                    </small>
+                                                </p>
+                                                <% } else { %>
+                                                    <p class="text-muted">Sin reservas</p>
+                                                    <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <small>Dirección: <%= e.direccion %></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselEstadisticas"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselEstadisticas"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+            <% } %>
+</div>

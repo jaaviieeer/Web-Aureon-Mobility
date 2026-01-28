@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') %>
+  <%- include('navbar') %>
+
+    <body>
+
+      <main class="main-panel container-fluid d-flex flex-column">
+        <%- include('accesibilidad') %>
+          <%- include('tabla-reservas') %>
+            <h1 class="mt-2 text-center" id="vehiculos-panel">Vehiculos de tu base</h1>
+            <%- include('tabla-vehiculos') %>
+              <%- include('modal-review') %>
+      </main>
+
+      <%- include('footer') %>
+    </body>
+
+</html>

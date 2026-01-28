@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') %>
+
+  <body>
+    <%- include('navbar') %>
+      <%- include('accesibilidad') %>
+        <div class="mt-5">
+          <h1 class="mt-5 mb-2 text-center" id="vehiculos-general">Nuestros vehiculos disponibles</h1>
+          <%- include('tabla-vehiculos') %>
+        </div>
+        <% if (usuario) { %>
+          <script>
+            var usuarioSesion = {
+              id: "<%= usuario.id %>",
+              nombre: "<%= usuario.nombre %>",
+              rol: "<%= usuario.rol %>"
+            };
+          </script>
+          <% } else { %>
+            <script>
+              var usuarioSesion = null;
+            </script>
+            <% } %>
+              <%- include('footer') %>
+  </body>
+  <html>

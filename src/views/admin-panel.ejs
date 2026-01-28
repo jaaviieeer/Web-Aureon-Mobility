@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('header') %>
+    <%- include('navbar') %>
+
+        <body>
+            <main class="main-panel container-fluid d-flex flex-column">
+                <% if (bdVacia) { %>
+                    <div class="modal fade" id="modal-json-inicial" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Selecciona archivos JSON para inicializar la Base de Datos
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Cerrar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row m-1">
+                                        <p class="text-danger">* Los vehiculos/usuarios deben asignarse a concesionarios existentes o deben insertarse a la vez</p>
+                                    </div>
+                                    <form method="post" action="/admin/subir-json" id="formJSON"
+                                        enctype="multipart/form-data">
+                                        <div class="row m-1">
+                                            <label for="vehiculosJSON" class="form-label">Vehiculos:</label>
+                                            <input type="file" name="vehiculosJSON" accept=".json" required>
+                                        </div>
+                                        <div class="row m-1">
+                                            <label for="concesionariosJSON" class="form-label">Concesionarios:
+                                            </label>
+                                            <input type="file" name="concesionariosJSON" accept=".json" required>
+                                        </div>
+                                        <div class="row m-1">
+                                            <label for="usuariosJSON" class="form-label">Usuarios:
+                                            </label>
+                                            <input type="file" name="usuariosJSON" accept=".json" required>
+                                        </div>
+                                        <div class="row m-1">
+                                            <p class="text-danger">* Los datos que ya existan serán actualizados</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Subir</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                        <%- include('accesibilidad') %>
+                            <%- include('tabla-usuarios') %>
+                                <%- include('tabla-concesionarios') %>
+                                    <div class="card bg-white m-5">
+                                        <div class="card-header bg-primary text-white">
+                                            <h2 class="mb-0 p-2">Estadísticas de la empresa</h2>
+                                        </div>
+                                        <%- include('estadisticas-concesionarios') %>
+                                            <%- include('estadisticas-generales') %>
+                                    </div>
+            </main>
+            <%- include('footer') %>
+        </body>
+
+</html>
